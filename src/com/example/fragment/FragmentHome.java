@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dianping.R;
 import com.example.utils.ShareUtils;
@@ -79,6 +80,9 @@ public class FragmentHome extends Fragment implements LocationListener {
 		@Override
 		public boolean handleMessage(Message msg) {
 			if (msg.what == 1) {
+				Toast.makeText(getActivity(), "123", Toast.LENGTH_LONG).show();
+				Toast.makeText(getActivity(), cityName, Toast.LENGTH_LONG)
+						.show();
 				index_top_city.setText(cityName);
 			}
 			return false;
@@ -103,8 +107,11 @@ public class FragmentHome extends Fragment implements LocationListener {
 		List<Address> list = null;
 		Geocoder ge = new Geocoder(getActivity());
 
+
 		try {
-			ge.getFromLocation(lat, lng, 2);
+			Toast.makeText(getActivity(), lat + "---" + lng, Toast.LENGTH_LONG)
+					.show();
+			list = ge.getFromLocation(lat, lng, 2);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -121,7 +128,6 @@ public class FragmentHome extends Fragment implements LocationListener {
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
-		// TODO Auto-generated method stub
 
 	}
 
