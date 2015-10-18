@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class FragmentTuan extends Fragment{
+	
+	
+	
+	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
